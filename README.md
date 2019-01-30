@@ -6,7 +6,7 @@ Detta är Datatekniksektionen inom TLTHs reglemente. Under "Releases" finns alla
 All text i repot ska vara skrivet på svenska.
 
 ### Efter ett sektionsmöte
-* Klona repot. `git clone https://github.com/Dsek-LTH/Reglemente.git`
+* Klona repot. `git clone https://github.com/Dsek-LTH/reglemente.git`
 * Om du redan klonat det till att du är på senaste revisionen. `git checkout master && git pull`
 * Skapa en ny branch. `git checkout -b [branchnamn, tex HTM2-2019]`
 * förVarje motion och proposition:
@@ -15,7 +15,7 @@ All text i repot ska vara skrivet på svenska.
     * Om en mer detaljerad beskrivning behövss bör kroppen av commitens meddelande istället användas. `git commit`
 * Se till att att mötesnamn och dagens datum står på varje sida i reglementet högst upp i högra hörnet.
 * Pusha upp din branch till Github `git push -u origin [branchnamn, tex HTM2-2019]`
-* Öppna en pull request på https://github.com/Dsek-LTH/Reglemente/pulls för att få med dina ändringar till huvudbranchen.
+* Öppna en pull request på https://github.com/Dsek-LTH/reglemente/pulls för att få med dina ändringar till huvudbranchen.
 * När denna godkänts, skapas en ny release och PDF automatiskt.
 
 ### När du vill göra redaktionella ändringar
