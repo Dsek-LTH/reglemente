@@ -1,0 +1,155 @@
+%%
+%% This is file `dsekcommon.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dsekcommon.dtx  (with options: `package')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from dsekcommon.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file dsekcommon.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dsekcommon}
+\typeout{This is dsekcommon.sty, version 2002-11-09}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[swedish]{babel}
+\RequirePackage{palatino}
+\RequirePackage{mathpazo}
+\RequirePackage[T1]{url}
+\RequirePackage{fancyhdr}
+\RequirePackage{sectsty}
+\RequirePackage{tocloft}
+\RequirePackage[hang]{caption2}
+\RequirePackage{ifpdf}
+\RequirePackage[scaled=0.92]{helvet}
+\RequirePackage{dsekcommands}
+\newcommand{\orgname}{Datatekniksektionen inom TLTH}
+\tthdump{%
+  \DeclareOption{pdfbookmarks}{%
+    \def\dsek@bookmarks{true}%
+    \def\dsek@pdfpagemode{UseOutlines}}
+  \DeclareOption{nopdfbookmarks}{%
+    \def\dsek@bookmarks{false}%
+    \def\dsek@pdfpagemode{None}}
+  \newcount\@usepdfmarginkern
+  \DeclareOption{pdfmarginkern}{%
+    \@usepdfmarginkern=1}
+  \DeclareOption{nopdfmarginkern}{%
+    \@usepdfmarginkern=0}
+  \ExecuteOptions{pdfbookmarks,pdfmarginkern}
+  \ProcessOptions\relax
+  \ifpdf
+    \pdfcompresslevel=9
+    \ifnum\@usepdfmarginkern=1
+      \pdfprotrudechars=1
+      \RequirePackage{dsekmarginkern}
+      \AtBeginDocument{%
+        \ifnum\pdftexversion > 13
+          {\setprotcode\font}%
+          {\bfseries\setprotcode\font}%
+          {\itshape\setprotcode\font}%
+          {\slshape\setprotcode\font}%
+        \else
+          \PackageWarning{dsekcommon}{%
+            Margin kerning is only available with pdfTeX 0.14\MessageBreak
+            and later. Use the option `nopdfmarginkern' or\MessageBreak
+            upgrade pdfTeX if you don't want to see this\MessageBreak
+            warning anymore}%
+        \fi
+      }%
+    \fi
+    \RequirePackage[pdfpagemode=\dsek@pdfpagemode,
+                    bookmarks=\dsek@bookmarks,
+                    bookmarksnumbered,
+                    bookmarksopen=true,
+                    colorlinks=true,
+                    linkcolor=black,
+                    urlcolor=black]{hyperref}[2001/04/13]
+    \def\@author{}
+    \def\@title{}
+    \AtBeginDocument{\makepdfinfo}
+    \newcommand{\makepdfinfo}{%
+      \pdfstringdef\pdf@title\@title
+      \pdfstringdef\pdf@author\@author
+      \pdfinfo{/Title   (\pdf@title)
+               /Author  (\pdf@author)
+               /Creator (LaTeX 2e)}}
+  \fi
+}
+\def\UrlFont{\slshape}
+\allsectionsfont{\sffamily\bfseries}
+\renewcommand{\captionfont}{\small\itshape}
+\renewcommand{\captionlabelfont}{\small\itshape}
+\setlength{\cftbeforesubsecskip}{0pt plus 3pt}
+\setlength{\cftbeforesubsubsecskip}{0pt plus 3pt}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries\SS@sectfont}
+\setlength{\textheight}{230mm}
+\setlength{\textwidth}{160mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{-15mm}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.7pt}
+\setlength{\headwidth}{\textwidth}
+\setlength{\headsep}{20mm}
+\setlength{\headheight}{16mm}
+\setlength{\parskip}{3mm}
+\setlength{\parindent}{0mm}
+\renewcommand{\@makefntext}[1]{%
+  \parindent 2.2em\everypar={\hangafter 1\hangindent 1em}%
+  \noindent\makebox[1em][l]{\textsuperscript{\@thefnmark}\ }#1}
+\renewcommand{\maketitle}{\begin{titlepage}%
+  \let\footnotesize\small
+  \let\footnoterule\relax
+  \let \footnote \thanks
+  \null\vfil
+  \vskip 60\p@
+  \begin{center}%
+    {\LARGE\bf\sffamily\@title\par}%
+    \vskip 3em%
+    {\large
+     \lineskip .75em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+      \vskip 1.5em%
+    {\large\@date\par}%
+  \vskip 20\p@
+  \Dlogosmall[32mm]
+  \end{center}\par
+  \@thanks
+  \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+}
+\newcommand{\setheader}[3]{%
+  \lhead{\parbox{18mm}{\Dlogosmall[16mm]}%
+    \parbox{80mm}{%
+      \textbf{\MakeUppercase{\orgname}}\newline{\small\MakeUppercase{#1}}}}
+  \chead{}
+  \rhead{\parbox{60mm}{{\small\hbox{}\hfill#2\newline\hbox{}\hfill#3}}}}
+\endinput
+%%
+%% End of file `dsekcommon.sty'.

@@ -1,0 +1,173 @@
+%%
+%% This is file `dsekcommands.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dsekcommands.dtx  (with options: `package')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from dsekcommands.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file dsekcommands.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dsekcommands}
+\typeout{This is dsekcommands.sty, version 2003-02-25}
+\def\@dseklogoprovided{yes}
+\RequirePackage{textcomp}
+\RequirePackage{xspace}
+\RequirePackage{texnames}
+\RequirePackage{graphicx}
+\RequirePackage{ifthen}
+\newcommand{\@dseklogocolorspec}{}
+\newcommand{\@dseklogopath}{}
+\DeclareOption{bw}{%
+  \renewcommand{\@dseklogocolorspec}{bw}}
+\DeclareOption{color}{%
+  \renewcommand{\@dseklogocolorspec}{col}}
+\ExecuteOptions{bw}
+\ProcessOptions\relax
+\newcommand{\Dlogo}[1][10pt]{%
+  \includegraphics[height=#1]{%
+    \@dseklogopath D-logo-org-\@dseklogocolorspec}}
+\newcommand{\Dlogosmall}[1][10pt]{%
+  \includegraphics[height=#1]{%
+    \@dseklogopath D-logo-org-\@dseklogocolorspec-compact}}
+\newcommand{\Dsymbol}[1][10pt]{%
+  \includegraphics[height=#1]{%
+    \@dseklogopath D-symbol}}
+\newcommand{\Dsymbolsmall}[1][10pt]{%
+  \includegraphics[height=#1]{%
+    \@dseklogopath D-symbol-compact}}
+\newcommand{\nohyperpageref}[1]{%
+  \ifx\hypergetpageref\undefined
+    \pageref{#1}%
+  \else
+    \hypergetpageref{#1}%
+  \fi}
+\def\tthdump#1{#1}
+\newcommand{\xspacedsek}{\tthdump{\xspace}%
+%%tth:\special{html: }%
+}
+\newlength{\signaturetopskip}
+\setlength{\signaturetopskip}{\baselineskip}
+\newlength{\signaturebottomskip}
+\setlength{\signaturebottomskip}{\baselineskip}
+\newlength{\signaturewidth}
+\newlength{\signatureheight}
+\setlength{\signatureheight}{15mm}
+\newlength{\signaturehorizskip}
+\setlength{\signaturehorizskip}{10mm}
+\newlength{\temp@sigwidth}%
+\newcommand{\signature}[4][]{%
+  \tthdump{\vspace{\signaturetopskip}%
+    \ifthenelse{\equal{#1}{}}{%
+      \settowidth{\signaturewidth}{#2~}%
+      \settowidth{\temp@sigwidth}{#3~}%
+      \ifthenelse{\lengthtest{\temp@sigwidth>\signaturewidth}}{%
+        \setlength{\signaturewidth}{\temp@sigwidth}}{}%
+      \settowidth{\temp@sigwidth}{#4~}%
+      \ifthenelse{\lengthtest{\temp@sigwidth>\signaturewidth}}{%
+        \setlength{\signaturewidth}{\temp@sigwidth}}{}}{%
+      \setlength{\signaturewidth}{#1}}%
+    \parbox[t]{\signaturewidth}{%
+      \raggedright #2~\vspace{\signatureheight}\\%
+      #3~\\%
+      #4~}%
+    \hspace{\signaturehorizskip}%
+    \vspace{\signaturetopskip}}%
+%%tth:\par#2\newline#3\newline#4
+}
+\newcommand{\oldsignature}[3]{
+  \tthdump{\vspace{\signaturetopskip}\parbox[t]{\signaturewidth}{%
+      #1~\vspace{\signatureheight}\\%
+      #2~\newline%
+      #3~}}
+%%tth:\par#1\newline#2\newline#3
+}
+\newcommand{\MaTeX}{%
+  \tthdump{M\kern-.25em\raise.4ex\hbox{%
+      \sc \uppercasesc a}\kern-.15em\TeX\xspace}%
+%%tth:\special{html:M<sup>A</sup>T<sub>E</sub>\xspacedsek}
+}
+\newcommand{\personakt}[2]{%
+  \tthdump{%
+    \ifpdf
+      \href{http://www.dsek.lth.se/cgi-bin/personakt?#2}{#1}%
+    \else
+      #1
+    \fi}
+%%tth:\special{html:<a href="http://www.dsek.lth.se/cgi-bin/personakt?}%
+%%tth:#2\special{html:">}#1\special{html:</a>}
+}
+\newcommand{\timemanagern}{%
+  \tthdump{Time\-Mana\-gern\texttrademark\xspace}%
+%%tth:\special{html:TimeManagern<sup>TM</sup>\xspacedsek}
+}
+\newcommand{\DIMMA}{%
+  \tthdump{DIMMA\texttrademark\xspace}%
+%%tth:\special{html:DIMMA<sup>TM</sup>\xspacedsek}
+}
+\newcommand{\idet}{iD\'{e}t\xspacedsek}
+\newcommand{\ddu}{D\'{ }du\xspacedsek%
+  \tthdump{%
+    \PackageWarning{dsekcommands}{%
+      The command `ddu' is obsolete and should not\MessageBreak
+      be used. Write the text "D'du" directly instead.}}}
+\newenvironment{fetlista}[1]{%
+  \begin{list}{\textbf{#1 }}{%
+      \setlength{\labelsep}{0pt}}}{%
+  \end{list}}
+\newenvironment{attlista}{%
+  \begin{fetlista}{att}}{%
+  \end{fetlista}}
+\DeclareFontFamily{OT1}{lthsymb}{}
+\DeclareFontShape{OT1}{lthsymb}{m}{n}{ <-> lthsymb}{}
+\newcommand{\lthsymb}{\usefont{OT1}{lthsymb}{m}{n}}
+\newcommand{\fsek}{\tthdump{{\lthsymb f}}%
+%%tth:F%
+}
+\newcommand{\esek}{\tthdump{{\lthsymb e}}%
+%%tth:E%
+}
+\newcommand{\msek}{\tthdump{{\lthsymb m}}%
+%%tth:M%
+}
+\newcommand{\vsek}{\tthdump{{\lthsymb v}}%
+%%tth:V%
+}
+\newcommand{\asek}{\tthdump{{\lthsymb a}}%
+%%tth:A%
+}
+\newcommand{\ksek}{\tthdump{{\lthsymb k}}%
+%%tth:K%
+}
+\newcommand{\dsek}{\tthdump{{\lthsymb d}}%
+%%tth:D%
+}
+\newcommand{\wsek}{\tthdump{{\lthsymb w}}%
+%%tth:W%
+}
+\newcommand{\driftsek}{\tthdump{{\lthsymb D}}%
+%%tth:Drift%
+}
+\newcommand{\af}{\tthdump{{\lthsymb A}}%
+%%tth:AF%
+}
+\newcommand{\tlth}{\tthdump{{\lthsymb l}}%
+%%tth:TLTH%
+}
+\newcommand{\hilbert}{{\lthsymb h}}
+\endinput
+%%
+%% End of file `dsekcommands.sty'.
