@@ -26,3 +26,6 @@ Redaktionella ändringar ändrar inte betydelsen av reglementet, utan ändrar en
 
 ## Historik
 Vid höstterminsmöte 1 2017 togs ett beslut att införa historik för sektionens styrdokument. Det togs även ett beslut att ålägga styrelsen att retroaktivt i den mån det går att införa denna historik. Detta påbörjades genom att i början i styrdokumenten fylla i en tabell med: datum, möte som tog beslutet, motion och vad som ändrades i klartext. Detta var inte hållbart i längden och Styrelsen 2019 flyttade hantering av historiken till Github. Den tidigare historiken ligger i en tidigt commit kallad "tidigare historik". De första ändringarna till styrdokumenten Github användes för var besluten från höstterminsmöte 2 2018.
+
+## Autoformatering
+Inbyggt i de flesta tex installationer finns programmet `latexindent` medföljande. Genom att köra `latexindent main.tex -w` för att se till att formateringen blir korrekt. Om du får varningar om att du saknar perl-paket när du kör `latexindent --version`, testa att köra `sudo cpan Log::LogDispatch Log::Dispatch::File YAML::Tiny File::HomeDir Log::Log4perl Unicode::GCString Getopt::Long` för att installera dessa.
