@@ -1,6 +1,6 @@
 # Reglemente
 
-Detta är reglementet för Datatekniksektionen inom TLTH. Under "Releases" finns alla versioner av reglementet. Läs commit-meddelanden för en mer detaljerad historik.
+Detta är reglementet för D-sektionen inom TLTH. Under "Releases" finns alla versioner av reglementet. Läs commit-meddelanden för en mer detaljerad historik.
 
 ## Användning
 All text i repot ska vara skrivet på svenska.
