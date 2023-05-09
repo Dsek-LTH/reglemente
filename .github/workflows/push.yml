@@ -3,7 +3,6 @@ name: Build and publish latex
 # Controls when the workflow will run
 on:
   push:
-    types: closed
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
