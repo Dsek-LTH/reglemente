@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> Flyttat till [Dsek-LTH/styrdokument](https://github.com/Dsek-LTH/styrdokument)
+
 # Reglemente
 
 Detta är reglementet för D-sektionen inom TLTH. Under "Releases" finns alla versioner av reglementet. Läs commit-meddelanden för en mer detaljerad historik.
